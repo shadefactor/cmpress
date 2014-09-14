@@ -2,6 +2,19 @@
 
 class ApiController extends BaseController {
 	public function receive(){
+
+		switch ($_POST['type']) {
+		  case 'hook.verify':
+		    // Validate the webhook
+		    \PodioHook::validate($_POST['hook_id'], array('code' => $_POST['code']));
+		  case 'item.create':
+		    // Do something. item_id is available in $_POST['item_id']
+		  case 'item.update':
+		    // Do something. item_id is available in $_POST['item_id']
+		  case 'item.delete':
+		    // Do something. item_id is available in $_POST['item_id']
+		}
+
 		$pb = new Postback;
 		$pb->data = serialize($_POST);
 		$pb->save();		

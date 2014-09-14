@@ -2,7 +2,7 @@
 
 class ApiController extends BaseController {
 	public function receive(){
-		
+		return 'hey api received';
 	}
 	public function test(){
 		try{

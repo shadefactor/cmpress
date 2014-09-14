@@ -18,5 +18,5 @@ Route::get('/', function()
 
 Route::get('posts', 'PostController@list_all');
 
-Route::get('api', 'ApiController@receive');
+Route::any('api', 'ApiController@receive');
 Route::get('postbacks', 'PostbackController@list_all');

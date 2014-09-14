@@ -5,8 +5,16 @@ class ApiController extends BaseController {
 
 		switch ($_POST['type']) {
 		  case 'hook.verify':
-		    \Podio::setup('podiopress-demo', 'DAbnfrnGqE6GLtMAvIoToj9gPCzXJ54UJdNY8l16M3pH9h9pBG65KK9MRTwWj64y');
-			\Podio::authenticate_with_app('9367689', '0ad62c85647c41229b9dba0bd786e868');
+		    \Podio::setup(
+		    	Config::get('podio.client_id'),
+		    	Config::get('podio.client_secret')
+		       );
+
+			\Podio::authenticate_with_app(
+				Config::get('podio.post_app_id'),
+				Config::get('podio.post_app_token')
+			   );
+
 		    \PodioHook::validate($_POST['hook_id'], array('code' => $_POST['code']));
 		  case 'item.create':
 		    $pb = new Postback;
@@ -24,8 +32,15 @@ class ApiController extends BaseController {
 	}
 	public function test(){
 		try{
-			\Podio::setup('podiopress-demo', 'DAbnfrnGqE6GLtMAvIoToj9gPCzXJ54UJdNY8l16M3pH9h9pBG65KK9MRTwWj64y');
-			\Podio::authenticate_with_app('9367689', '0ad62c85647c41229b9dba0bd786e868');	
+			\Podio::setup(
+		    	Config::get('podio.client_id'),
+		    	Config::get('podio.client_secret')
+		       );
+
+			\Podio::authenticate_with_app(
+				Config::get('podio.post_app_id'),
+				Config::get('podio.post_app_token')
+			   );
 		}
 		catch(\PodioError $pe){
 			return $pe->getMessage();

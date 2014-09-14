@@ -2,6 +2,9 @@
 
 class ApiController extends BaseController {
 	public function receive(){
+		$pb = new Postback;
+		$pb->data = serialize($_POST);
+		$pb->save();		
 		return 'hey api received';
 	}
 	public function test(){

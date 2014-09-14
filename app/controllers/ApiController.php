@@ -2,6 +2,9 @@
 
 class ApiController extends BaseController {
 	public function receive(){
+		
+		\Podio::setup('podiopress-demo', 'DAbnfrnGqE6GLtMAvIoToj9gPCzXJ54UJdNY8l16M3pH9h9pBG65KK9MRTwWj64y');
+		\Podio::authenticate_with_app('9367689', '0ad62c85647c41229b9dba0bd786e868');
 
 		switch ($_POST['type']) {
 		  case 'hook.verify':

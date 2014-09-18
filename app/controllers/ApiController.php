@@ -23,9 +23,17 @@ class ApiController extends BaseController {
 			$pb->item_id = $_POST['item_id'];
 			$pb->save();		
 		  case 'item.update':
-		    // Do something. item_id is available in $_POST['item_id']
+		    $pb = new Postback;
+			$pb->data = serialize($_POST);
+			$pb->pb_type = $_POST['type'];
+			$pb->item_id = $_POST['item_id'];
+			$pb->save();	
 		  case 'item.delete':
-		    // Do something. item_id is available in $_POST['item_id']
+		    $pb = new Postback;
+			$pb->data = serialize($_POST);
+			$pb->pb_type = $_POST['type'];
+			$pb->item_id = $_POST['item_id'];
+			$pb->save();	
 		}
 
 		return 'hey api received';

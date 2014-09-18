@@ -20,3 +20,8 @@ Route::get('posts', 'PostController@list_all');
 
 Route::post('api', 'ApiController@receive');
 Route::get('postbacks', 'PostbackController@list_all');
+
+Route::group(array('namespace' => 'cp-admin'), function()
+{
+    
+});

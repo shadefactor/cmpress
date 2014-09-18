@@ -1,5 +1,5 @@
 {
-	"name": "buonzz/podiopress",
+	"name": "buonzz/cmpress",
 	"description": "Content Management System using Podio as backend.",
 	"keywords": ["framework", "laravel", "podio", "CMS"],
 	"license": "MIT",

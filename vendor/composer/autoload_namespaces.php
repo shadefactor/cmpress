@@ -36,5 +36,6 @@ return array(
     'Crypt' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'ClassPreloader' => array($vendorDir . '/classpreloader/classpreloader/src'),
     'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
+    'Buonzz\\CMPress\\' => array($baseDir . '/app/lib/src'),
     'Boris' => array($vendorDir . '/d11wtq/boris/lib'),
 );
